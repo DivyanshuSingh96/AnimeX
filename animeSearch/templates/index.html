@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AnimeX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Ubuntu:ital,wght@0,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Style Sheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+    <!-- Font Awesome -->
+    <script
+      src="{% static 'https://kit.fontawesome.com/9c8e145fe3.js' %}"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Bootstrap scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="header__logo">
+              <h3 style="color: white"><b>AnimeX</b></h3>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="header__nav">
+              <nav class="header__menu mobile-menu">
+                <ul>
+                  <li class="active"><a href="./index.html">Homepage</a></li>
+                  <li><a href="./blog.html">Features</a></li>
+                  <li><a href="./blog.html">Our Blog</a></li>
+                  <li><a href="#">Contacts</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="header__right">
+              <a href="#" class="search-switch"
+                ><span class="icon_search"></span
+              ></a>
+              <a href="./login.html"><span class="icon_profile"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="about">
+      <div>
+        <p class="about-content">
+          The world isn’t perfect. But it’s there for us, doing the best it can…
+          that’s what makes Anime so beautiful. Often many times we tend to find
+          Anime but it's b difficult to do so when finding according to their
+          genres and image. So here we are with the Anime Recommendation Search
+          Engine using the Image Processing Feature. Our ML Model will display
+          all the information of that Particular Character's Anime and also
+          display similar types of Anime recommendation. A better idea of using
+          image processing feature makes it unique as well as makes it easier
+          for the user to search their anime and it's surroundings. We usually
+          see recommendation engines for Movies and Books but you wouldn't find
+          recommendation engines based on Image Processing Features.
+        </p>
+      </div>
+    </section>
+
+    <section class="slider">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-ride="false"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="testimonial-image"
+              src="{% static 'images/hero/hero-1.jpg' %}"
+              alt="fate-stayNight"
+            />
+          </div>
+          <div class="carousel-item active">
+            <img
+              class="testimonial-image"
+              src="{% static 'images/hero/hero-2.jpg' %}"
+              alt="fate-stayNight"
+            />
+          </div>
+          <div class="carousel-item active">
+            <img
+              class="testimonial-image"
+              src="{% static 'images/hero/hero-3.webp' %}"
+              alt="fate-stayNight"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <hr style="background-color: white; height: 3px" />
+    <section class="ML-content">
+      <div class="search-bar">
+        <table>
+          <tr>
+            <th><h2 style="color: white">Just type and explore...</h2></th>
+            <th>
+              <div class="input-box">
+                <input type="text" placeholder="Search..." />
+                <span class="icon">
+                  <i class="uil uil-search search-icon"></i>
+                </span>
+                <i class="uil uil-times close-icon"></i>
+              </div>
+
+              <script>
+                let inputBox = document.querySelector(".input-box"),
+                  searchIcon = document.querySelector(".icon"),
+                  closeIcon = document.querySelector(".close-icon");
+
+                searchIcon.addEventListener("click", () =>
+                  inputBox.classList.add("open")
+                );
+                closeIcon.addEventListener("click", () =>
+                  inputBox.classList.remove("open")
+                );
+              </script>
+            </th>
+          </tr>
+        </table>
+      </div>
+      <hr />
+
+      <div class="carousel_cont">
+        <div class="container"></div>
+      </div>
+
+      <div class="upload-section">
+        <b
+          ><h1 style="color: white">
+            Or move one step further and try our exclusive image search
+          </h1></b
+        >
+        <div class="uploadOuter">
+          <label for="uploadFile" class="btn btn-primary" style="color: white; background-color: #e53637;">Upload Image</label>
+          <strong style="color: white
+          ;">OR</strong>
+          <span class="dragBox">
+            Darg and Drop image here
+            <input
+              type="file"
+              onChange="dragNdrop(event)"
+              ondragover="drag()"
+              ondrop="drop()"
+              id="uploadFile"
+            />
+          </span>
+        </div>
+        <div id="preview"></div>
+      </div>
+    </section>
+    <hr style="background-color: white; height: 3px" />
+    <footer class="white-section" id="footer">
+      <i class="fa-brands fa-square-twitter"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-square-instagram"></i>
+      <i class="fa-solid fa-envelope"></i>
+      <p class="copyright">© Copyright 2022 AnimeX</p>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
